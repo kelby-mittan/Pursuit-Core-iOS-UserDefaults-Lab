@@ -18,7 +18,7 @@ class SignPickerController: UIViewController {
     private let signs = ["Aires", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
     
     var signName: String?
-    var userName: String?
+    var userName = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +26,15 @@ class SignPickerController: UIViewController {
         signPicker.dataSource = self
         signPicker.delegate = self
         textField.delegate = self
+        updateUI()
     }
     
+    private func updateUI() {
+        if let name = UserNameSign.shared.getUserName() {
+            nameLabel.text = name
+        }
+        
+    }
     
 }
 
@@ -60,8 +67,9 @@ extension SignPickerController: UIPickerViewDelegate {
 extension SignPickerController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         resignFirstResponder()
-        userName = textField.text
+        userName = textField.text ?? ""
         nameLabel.text = userName
+        UserNameSign.shared.updateUserName(with: userName)
         textField.text = ""
         return true
     }

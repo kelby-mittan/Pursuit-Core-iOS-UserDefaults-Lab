@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		025D478923CE8B1D0018E61B /* HoroscopeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D478823CE8B1D0018E61B /* HoroscopeController.swift */; };
+		025D478B23CE928E0018E61B /* UserNameSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D478A23CE928E0018E61B /* UserNameSign.swift */; };
 		027B201123CE805D00BC3DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B201023CE805D00BC3DA9 /* AppDelegate.swift */; };
 		027B201323CE805D00BC3DA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B201223CE805D00BC3DA9 /* SceneDelegate.swift */; };
 		027B201523CE805D00BC3DA9 /* SignPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B201423CE805D00BC3DA9 /* SignPickerController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		025D478823CE8B1D0018E61B /* HoroscopeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeController.swift; sourceTree = "<group>"; };
+		025D478A23CE928E0018E61B /* UserNameSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameSign.swift; sourceTree = "<group>"; };
 		027B200D23CE805D00BC3DA9 /* UserDefaultsHoroscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserDefaultsHoroscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027B201023CE805D00BC3DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		027B201223CE805D00BC3DA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				027B201023CE805D00BC3DA9 /* AppDelegate.swift */,
 				027B201223CE805D00BC3DA9 /* SceneDelegate.swift */,
+				025D478A23CE928E0018E61B /* UserNameSign.swift */,
 				027B201423CE805D00BC3DA9 /* SignPickerController.swift */,
 				025D478823CE8B1D0018E61B /* HoroscopeController.swift */,
 				027B201623CE805D00BC3DA9 /* Main.storyboard */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				027B201523CE805D00BC3DA9 /* SignPickerController.swift in Sources */,
+				025D478B23CE928E0018E61B /* UserNameSign.swift in Sources */,
 				027B201123CE805D00BC3DA9 /* AppDelegate.swift in Sources */,
 				025D478923CE8B1D0018E61B /* HoroscopeController.swift in Sources */,
 				027B201323CE805D00BC3DA9 /* SceneDelegate.swift in Sources */,
