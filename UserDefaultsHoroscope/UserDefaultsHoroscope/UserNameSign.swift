@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum BikeRun: String {
-    case bike = "bike"
-    case run = "run"
-}
 
 struct UserPreferenceKey {
     static let userName = "User Name"

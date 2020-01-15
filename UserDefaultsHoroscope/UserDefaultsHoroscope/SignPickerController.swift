@@ -40,6 +40,14 @@ class SignPickerController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let horoscopeVC = segue.destination as? HoroscopeController else {
+            fatalError()
+        }
+        horoscopeVC.sign = signName
+        horoscopeVC.name = userName
+    }
+    
 }
 
 extension SignPickerController: UIPickerViewDataSource {
