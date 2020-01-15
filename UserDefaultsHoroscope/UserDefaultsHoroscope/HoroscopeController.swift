@@ -40,6 +40,7 @@ class HoroscopeController: UIViewController {
                 }
             }
         }
+        navigationItem.title = sign
     }
     
 

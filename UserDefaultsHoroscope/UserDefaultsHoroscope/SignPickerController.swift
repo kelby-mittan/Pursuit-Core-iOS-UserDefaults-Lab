@@ -44,8 +44,14 @@ class SignPickerController: UIViewController {
         guard let horoscopeVC = segue.destination as? HoroscopeController else {
             fatalError()
         }
-        horoscopeVC.sign = signName
-        horoscopeVC.name = userName
+        if let sign = UserNameSign.shared.getUserSign() {
+            horoscopeVC.sign = sign
+        }
+        
+        if let name = UserNameSign.shared.getUserName() {
+            horoscopeVC.name = name
+        }
+//        horoscopeVC.name = userName
     }
     
 }
