@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum UnitMeasurement: String {
-    case miles = "Miles"
-    case kilometers = "Kilometers"
-}
-
 enum BikeRun: String {
     case bike = "bike"
     case run = "run"
@@ -20,7 +15,7 @@ enum BikeRun: String {
 
 struct UserPreferenceKey {
     static let userName = "User Name"
-    static let bikeRunImage = "Bike or Run"
+    static let userSign = "User Sign"
 }
 
 class UserNameSign {
@@ -30,22 +25,13 @@ class UserNameSign {
     static let shared = UserNameSign()
     
     func updateUserName(with unit: String) {
-        // storing or persiting the unit measurment value to UserDefaults (device or simimular as permanent storage)
-        
-        // UserDefaults.standard is a Singleton in iOS that gives us access to
-        // saving and retrieving stored data in the device or simulator
         UserDefaults.standard.set(unit, forKey: UserPreferenceKey.userName)
-        
-        // key is "Unit Measurement"
-        // value is either "Miles" or "Kilometers"
-        // UserDefaults: ["Unit Measurement" : "Kilometers"]
     }
     
-    func updateImage(with image: BikeRun) {
-        UserDefaults.standard.set(image.rawValue, forKey: UserPreferenceKey.bikeRunImage)
+    func updateSign(with sign: String) {
+        UserDefaults.standard.set(sign, forKey: UserPreferenceKey.userSign)
     }
     
-    // retrieve a user defaults value (object)
     func getUserName() -> String? {
         guard let userName = UserDefaults.standard.object(forKey: UserPreferenceKey.userName) as? String else {
             return nil
@@ -53,10 +39,10 @@ class UserNameSign {
         return userName
     }
     
-    func getImageString() -> BikeRun? {
-        guard let bikeOrRun = UserDefaults.standard.object(forKey: UserPreferenceKey.bikeRunImage) as? String else {
+    func getUserSign() -> String? {
+        guard let userSign = UserDefaults.standard.object(forKey: UserPreferenceKey.userSign) as? String else {
             return nil
         }
-        return BikeRun(rawValue: bikeOrRun)
+        return userSign
     }
 }

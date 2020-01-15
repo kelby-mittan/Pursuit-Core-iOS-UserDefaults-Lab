@@ -17,7 +17,7 @@ class SignPickerController: UIViewController {
     
     private let signs = ["Aires", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
     
-    var signName: String?
+    var signName = String()
     var userName = String()
     
     override func viewDidLoad() {
@@ -32,6 +32,10 @@ class SignPickerController: UIViewController {
     private func updateUI() {
         if let name = UserNameSign.shared.getUserName() {
             nameLabel.text = name
+        }
+        
+        if let sign = UserNameSign.shared.getUserSign() {
+            signLabel.text = sign
         }
         
     }
@@ -54,7 +58,8 @@ extension SignPickerController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        signName = signs[row].lowercased()
+        signName = signs[row]
+        UserNameSign.shared.updateSign(with: signName)
 //        signLabel.text = signs[row]
     }
     
